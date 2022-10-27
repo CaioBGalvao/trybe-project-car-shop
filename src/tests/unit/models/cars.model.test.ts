@@ -1,7 +1,7 @@
 import * as sinon from 'sinon';
 import { expect } from 'chai';
 import CarModel from '../../../models/cars.model';
-import mongoose, { Model } from 'mongoose';
+import mongoose from 'mongoose';
 import { carMock, carsMockWithId } from '../../unit/Modelmock/cars.model.mock';
 import { ErrorTypes } from '../../../err/catalog';
 
@@ -9,11 +9,11 @@ describe('Car Model', () => {
   const carModel = new CarModel();
 
   beforeEach(() => {
-    sinon.stub(Model, 'create').resolves(carsMockWithId);
-    sinon.stub(Model, 'find').resolves([carsMockWithId]);
-    sinon.stub(Model, 'findOne').resolves(carsMockWithId);
-    sinon.stub(Model, 'findByIdAndUpdate').resolves(carsMockWithId);
-    sinon.stub(Model, 'findByIdAndDelete').resolves(carsMockWithId);
+    sinon.stub(mongoose.Model, 'create').resolves(carsMockWithId);
+    sinon.stub(mongoose.Model, 'find').resolves([carsMockWithId]);
+    sinon.stub(mongoose.Model, 'findOne').resolves(carsMockWithId);
+    sinon.stub(mongoose.Model, 'findByIdAndUpdate').resolves(carsMockWithId);
+    sinon.stub(mongoose.Model, 'findByIdAndDelete').resolves(carsMockWithId);
   });
 
   afterEach(() => {

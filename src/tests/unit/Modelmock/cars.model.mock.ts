@@ -1,4 +1,4 @@
-import ICar from '../../../interfaces/ICar';
+import { ICar } from '../../../interfaces/ICar';
 
 const carMock:ICar = {
   model: "Ferrari Maranello",
